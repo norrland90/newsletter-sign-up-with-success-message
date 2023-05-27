@@ -13,18 +13,19 @@ function onFormSubmit(e) {
   }
 }
 
+function onFormInput(e) {
+  if (validateEmail(e.target.value)) {
+    removeWarningText();
+  } else {
+    return;
+  }
+}
+
 function validateEmail(email) {
   const re =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   return String(email).toLowerCase().match(re);
-}
-
-function success(email) {
-  document.querySelector('.subscribe').setAttribute('id', 'hidden');
-  document.querySelector('.success').removeAttribute('id');
-
-  document.querySelector('.success__email').textContent = email;
 }
 
 function incorrectMail() {
@@ -47,6 +48,13 @@ function incorrectMail() {
   }
 }
 
+function success(email) {
+  document.querySelector('.subscribe').setAttribute('id', 'hidden');
+  document.querySelector('.success').removeAttribute('id');
+
+  document.querySelector('.success__email').textContent = email;
+}
+
 function dismissMessage() {
   document.querySelector('.success').setAttribute('id', 'hidden');
   document.querySelector('.subscribe').removeAttribute('id');
@@ -55,7 +63,10 @@ function dismissMessage() {
 
 function resetForm() {
   subscribeInput.value = '';
+  removeWarningText();
+}
 
+function removeWarningText() {
   const subscribeLabelContainer = document.querySelector(
     '.subscribe__label-container'
   );
@@ -72,4 +83,5 @@ function resetForm() {
 }
 
 form.addEventListener('submit', onFormSubmit);
+subscribeInput.addEventListener('input', onFormInput);
 dismissBtn.addEventListener('click', dismissMessage);
