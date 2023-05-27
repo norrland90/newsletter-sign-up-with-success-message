@@ -4,7 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="./resources/css/style.css" />
-    <title>Newsletter Sign Up</title>
+    <script src="./resources/js/script.js" defer></script>
+    <title>Newsletter Sign Up Page</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <article class="subscribe">
+        <img
+          src="./resources/images/illustration-sign-up-mobile.svg"
+          alt=""
+          class="subscribe__image subscribe__image--mobile"
+        />
+        <img
+          src="./resources/images/illustration-sign-up-desktop.svg"
+          alt=""
+          class="subscribe__image subscribe__image--desktop"
+        />
+        <section class="subscribe__text-container">
+          <h1 class="subscribe__heading">Stay updated!</h1>
+          <p class="subscribe__paragraph">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="subscribe__list">
+            <li class="subscribe__list-item">
+              <img
+                src="./resources/images/icon-list.svg"
+                alt=""
+                class="subscribe__list-icon"
+              />
+              <p class="subscribe__list-text">
+                Product discovery and building what matters
+              </p>
+            </li>
+            <li class="subscribe__list-item">
+              <img
+                src="./resources/images/icon-list.svg"
+                alt=""
+                class="subscribe__list-icon"
+              />
+              <p class="subscribe__list-text">
+                Measuring to ensure updates are a success
+              </p>
+            </li>
+            <li class="subscribe__list-item">
+              <img
+                src="./resources/images/icon-list.svg"
+                alt=""
+                class="subscribe__list-icon"
+              />
+              <p class="subscribe__list-text">And much more!</p>
+            </li>
+          </ul>
+          <form class="subscribe__form">
+            <div class="subscribe__label-container">
+              <label for="email" class="subscribe__label">Email address</label>
+              <!-- <p class="subscribe__label subscribe__label--warning">
+                Valid email required
+              </p> -->
+            </div>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              class="subscribe__input"
+              placeholder="email@company.com"
+            />
+            <button type="submit" class="btn" id="btn__subscribe">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+      </article>
+
+      <article class="success" id="hidden">
+        <img
+          src="./resources/images/icon-success.svg"
+          alt=""
+          class="success__icon"
+        />
+        <h1 class="success__heading">Thanks for subscribing!</h1>
+        <p class="success__paragraph">
+          A confirmation email has been sent to
+          <span class="success__email">example@company.com</span>. Please open
+          it and click the button inside to confirm your subscription.
+        </p>
+        <button class="btn" id="btn__dismiss">Dismiss message</button>
+      </article>
+    </main>
+  </body>
 </html>
